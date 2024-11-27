@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscripción</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Suscripción</h1>
+    <form method="post" action="suscribe.php" id="suscripcionForm">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <p>
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" id="nombre" >
+                <span class="error"></span>
+            </p>
+            <p>
+                <label for="dni">DNI: </label>
+                <input type="text" name="dni" id="dni" >
+                <span class="error"></span>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Tipo de Suscripción</legend>
+            <span class="error"></span>
+            <input type="radio" name="tipo" id="basico" value="basico" checked >
+            <label for="basico">Básico</label>
+            <input type="radio" name="tipo" id="estandar" value="estandar" >
+            <label for="estandar">Estándar</label>
+            <input type="radio" name="tipo" id="premium" value="premium" >
+            <label for="premium">Premium</label>
+            <input type="radio" name="tipo" id="elite" value="elite" >
+            <label for="elite">Élite</label>            
+        </fieldset>
+        <fieldset>
+            <legend>Temas</legend>
+            <span class="error"></span>
+            <!-- <input type="checkbox" name="tema[]" id="Cocina" value="Cocina" >
+            <label for="Cocina">Cocina</label>
+            <input type="checkbox" name="tema[]" id="Futbol" value="Futbol" >
+            <label for="Futbol">Futbol</label>     -->
+            <div id="temasContainer"></div>        
+        </fieldset>
+        <p>
+            <input type="reset" value="Borrar">
+            <input type="submit" value="Suscribir">
+        </p>
+    </form>
+</body>
+</html>

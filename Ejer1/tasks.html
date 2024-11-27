@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Tareas</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .state {
+            min-height: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .task {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin: 5px 0;
+            cursor: move;
+        }
+
+        .high {
+            background-color: #ffcccc;
+        }
+
+        .medium {
+            background-color: #ffffcc;
+        }
+
+        .low {
+            background-color: #ccffcc;
+        }
+
+        .none {
+            background-color: #ccc;
+        }
+        form {
+            border: 1px solid blue;
+            background-color: lightblue;
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+    <script src="tasks.js"></script>
+    <script src="ej1.js" defer></script>
+</head>
+
+<body>
+    <h1>Organizador de Tareas</h1>
+    <form action="">
+        <input type="text" name="task" placeholder="tarea..." required minlength="3">
+        <select name="priority" id="" required>
+            <option value="" disabled selected class="none">Prioridad...</option>
+            <option value="low" class="low">baja</option>
+            <option value="medium" class="medium">media</option>
+            <option value="high" class="high">alta</option>
+        </select>
+        <input type="submit" value="crear">
+    </form>
+    <div class="container">
+        <div class="state" id="to-do">
+            <h2>Por hacer</h2>
+            <!-- <div class="task medium" id="task_2">Ejemplo de tarea</div> -->
+        </div>
+        <div class="state" id="in-progress">
+            <h2>En proceso</h2>
+        </div>
+        <div class="state" id="done">
+            <h2>Realizado</h2>
+        </div>
+        <div class="state" id="paperbin">
+            <h2>Papelera
+                <button>Vaciar papelera</button>
+            </h2>
+        </div>
+    </div>
+
+</body>
+
+</html>
