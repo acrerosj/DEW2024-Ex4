@@ -9,7 +9,13 @@
         .error {
             color: red;
         }
+
+        label {
+            margin-right: 20px;
+        }
     </style>
+    <script src="temas.js"></script>
+    <script src="ej2.js" defer></script>
 </head>
 <body>
     <h1>Formulario de Suscripción</h1>
@@ -18,19 +24,19 @@
             <legend>Datos personales</legend>
             <p>
                 <label for="nombre">Nombre: </label>
-                <input type="text" name="nombre" id="nombre" >
-                <span class="error"></span>
+                <input type="text" name="nombre" id="nombre" minlength="3" required>
+                <span class="error" id="nombreError"></span>
             </p>
             <p>
                 <label for="dni">DNI: </label>
-                <input type="text" name="dni" id="dni" >
-                <span class="error"></span>
+                <input type="text" name="dni" id="dni" required pattern="[0-9]{8}-[A-Za-z]">
+                <span class="error" id="dniError"></span>
             </p>
         </fieldset>
         <fieldset>
-            <legend>Tipo de Suscripción</legend>
+            <legend>Tipo de Suscripción: <span id="precio">--</span> €</legend>
             <span class="error"></span>
-            <input type="radio" name="tipo" id="basico" value="basico" checked >
+            <input type="radio" name="tipo" id="basico" value="basico" checked>
             <label for="basico">Básico</label>
             <input type="radio" name="tipo" id="estandar" value="estandar" >
             <label for="estandar">Estándar</label>
@@ -42,11 +48,12 @@
         <fieldset>
             <legend>Temas</legend>
             <span class="error"></span>
-            <!-- <input type="checkbox" name="tema[]" id="Cocina" value="Cocina" >
-            <label for="Cocina">Cocina</label>
-            <input type="checkbox" name="tema[]" id="Futbol" value="Futbol" >
-            <label for="Futbol">Futbol</label>     -->
-            <div id="temasContainer"></div>        
+            <div id="temasContainer">
+                <!-- <input type="checkbox" name="tema[]" id="Cocina" value="Cocina" >
+                <label for="Cocina">Cocina</label>
+                <input type="checkbox" name="tema[]" id="Futbol" value="Futbol" >
+                <label for="Futbol">Futbol</label>     -->
+            </div>        
         </fieldset>
         <p>
             <input type="reset" value="Borrar">
